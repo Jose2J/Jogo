@@ -1,0 +1,14 @@
+{
+	"name": "Iniciar",
+	"plugin-id": "Button",
+	"sid": 292647509630023,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Senóide",
+			"sid": 827105602153826
+		}
+	]
+}

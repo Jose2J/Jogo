@@ -1,0 +1,251 @@
+{
+	"name": "Folha de eventos 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Diamantes",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 549196989648946
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite",
+					"sid": 281461665645673,
+					"parameters": {
+						"object": "Sprite2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite",
+					"sid": 711926521110839
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 681356982102636,
+					"parameters": {
+						"audio-file": "Explosion1",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"explosao\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 266195022091861,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 365094913425585,
+					"parameters": {
+						"layout": "Game Over"
+					}
+				}
+			],
+			"sid": 838844236869457
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite",
+					"sid": 822247413954908,
+					"parameters": {
+						"object": "diamante"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "diamante",
+					"sid": 196306724671394
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 828327312201753,
+					"parameters": {
+						"variable": "Diamantes",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 299122399877016,
+					"parameters": {
+						"audio-file": "Coins4",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"diamantes\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Diamantes",
+					"sid": 380177733062037,
+					"parameters": {
+						"text": "Diamantes|\"\""
+					}
+				}
+			],
+			"sid": 192678701667976,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 650256828183525,
+							"parameters": {
+								"variable": "Diamantes",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite2",
+							"sid": 596750591025567
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Sprite",
+							"sid": 529997751506652,
+							"behaviorType": "MovimentoEmGrid",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 816019245509996,
+							"parameters": {
+								"layout": "inicio"
+							}
+						}
+					],
+					"sid": 603352862982443
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 330903666649646
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 328658958749754,
+					"parameters": {
+						"variable": "Diamantes",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 456921139099014
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "reiniciar",
+					"sid": 618545520961707
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 362674672154499,
+					"parameters": {
+						"layout": "Game"
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 888207179355791
+				}
+			],
+			"sid": 659659965862246
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Iniciar",
+					"sid": 696772939530836
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 450501193594631,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 829075799203832
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 519018058593095
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 356986422150542,
+					"parameters": {
+						"audio-file": "Nighttime-Escape",
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"trilha\""
+					}
+				}
+			],
+			"sid": 908455226107761
+		}
+	],
+	"sid": 908973255947988
+}

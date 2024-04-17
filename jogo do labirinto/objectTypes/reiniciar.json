@@ -1,0 +1,14 @@
+{
+	"name": "reiniciar",
+	"plugin-id": "Button",
+	"sid": 253015414462842,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Senóide",
+			"sid": 227641751802484
+		}
+	]
+}
